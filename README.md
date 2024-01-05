@@ -33,26 +33,26 @@ $$q(x_t|x_{t-1}) =  \mathcal{N} ( x_t ; \sqrt{1-\beta_t}x_{t-1} , \beta_t I) \qu
 our objective is to generate a sequence of environments that effectively support the continual learning of the student agent. We adopt an RL-based approach for the environment generation process.
 
 At the core of SHED is the hierarchical MDP framework, consisting of an upper-level RL teacher policy and a lower-level student policy. 
-Specifically, our framework involves specifying the upper-level teacher policy, $\Lambda:\bm{\Pi} \rightarrow \Delta(\mathbb{\theta})$, where $\bm{\Pi}$ represents the set of possible student policies, and $\mathbb{\theta}$ signifies the range of potential environmental parameters.
-Diverging from RL teacher in the PAIRED algorithm, which takes inputs comprising the current fully observed state of the environment, the current time step $t$, and a random vector $z\sim \mathcal{N}(0,I)$, our method first approximates the student agent's policy by assessing its performance across a diverse set of environments. This input provides a more accurate reflection of the student's current capability level, enabling the teacher to consistently design environments that effectively support continuous training. We now elaborate on the specifics of our hierarchical framework. 
+Specifically, our framework involves specifying the upper-level teacher policy, $\Lambda:\Pi \rightarrow \Delta(\mathbb{\theta})$, where $\Pi$ represents the set of possible student policies, and $\mathbb{\theta}$ signifies the range of potential environmental parameters. Our diffusion model, denoted as $M$, may be utilized to generate synthetic teacher experiences by continually training the diffusion model on newly collected experiences. 
 
 
 ## 4. Experiment Domain
-we present our experimental results in the domains of BipedalWalker, Minigrid, and CarRacing to demonstrate the superior performance of our approach when a trained agent is transferred to new environments.
+### 4.1 Evaluate the performance of the trajectory modelling
+<div align=center>  <img title="Lunar Lander" src="Figures/diffusion_1.PNG" width=25%>  <img title="Lunar Lander" src="Figures/diffusion_2.PNG" width=25%>  <img title="Lunar Lander" src="Figures/diffusion_3_1.PNG" width=25%>  <img title="Lunar Lander" src="Figures/diffusion_3_2.PNG" width=25%>    </div>
+### 4.2 Two domains
+we present our experimental results in the domains of BipedalWalker, Lunar Lander to demonstrate the superior performance of our approach when a trained agent is transferred to new environments.
 
 
-<div align=center>  <img title="BipedalWalker" src="Figures/walker_example_new.PNG" width=30%>   <img title="Minigrid" src="Figures/maze_example.PNG" width=30%> <img title="CarRacing" src="Figures/car_example.PNG" width=30%> </div>
+<div align=center>  <img title="Lunar Lander" src="Figures/lander.PNG" width=45%>    <img title="BipedalWalker" src="Figures/walker.PNG" width=45%> </div>
 
-We show some results here
-![image](Figures/results_walker_ijcai.png#pic_center)
 
 
 ## BibTeX
-> @article{li2023diversity,  
-  title={Diversity Induced Environment Design via Self-Play},  
-  author={Li, Dexun and Li, Wenjun and Varakantham, Pradeep},  
-  journal={arXiv preprint arXiv:2302.02119},  
+> @article{li2023hierarchical,  
+  title={A Hierarchical Approach to Environment Design with Generative Trajectory Modeling},  
+  author={Li, Dexun and Varakantham, Pradeep},  
+  journal={arXiv preprint arXiv:2310.00301},  
   year={2023}  
-}
+}  
 
 
