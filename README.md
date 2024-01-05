@@ -25,8 +25,8 @@ To validate the effectiveness of SHED, we conduct empirical experiments across v
 In UED, we train a student agent to perform well across a set of in-distribution and out-of-distribution environments. To accomplish this, UED utilizes a teacher agent that provides a sequence of environment parameter values and generates the corresponding environment to train the student to generalize well to unseen environment levels.
 
 ### 2.2 Diffusion model
-In a diffusion probabilistic model, we assume a $D$-dimensional random variable $\vx \in \R^D$ with an unknown distribution $q_0(x_0)$. Diffusion Probabilistic model involves two Markov chains: a forward chain $\displaystyle q(\vx_t|\vx_{t-1})$ that perturbs data to noise, and a reverse chain that converts noise back to data. The forward chain is typically designed to transform any data distribution into a simple prior distribution (e.g., standard Gaussian) by considering perturb data with Gaussian noise of zero mean and $\beta_t$ variance for $T$ steps:    
-$$q(\vx_t|\vx_{t-1}) =  \mathcal{N} ( \vx_t ; \sqrt{1-\beta_t}\vx_{t-1} , \beta_t \mI) \quad q(\vx_{1:T}|\vx_{0}) = \Pi_{t=1}^T q(\vx_t|\vx_{t-1})
+In a diffusion probabilistic model, we assume a $D$-dimensional random variable $x \in R^D$ with an unknown distribution $q_0(x_0)$. Diffusion Probabilistic model involves two Markov chains: a forward chain $\displaystyle q(x_t|x_{t-1})$ that perturbs data to noise, and a reverse chain that converts noise back to data. The forward chain is typically designed to transform any data distribution into a simple prior distribution (e.g., standard Gaussian) by considering perturb data with Gaussian noise of zero mean and $\beta_t$ variance for $T$ steps:    
+$$q(x_t|x_{t-1}) =  \mathcal{N} ( x_t ; \sqrt{1-\beta_t}x_{t-1} , \beta_t I) \quad q(x_{1:T}|x_{0}) = \Pi_{t=1}^T q(x_t|x_{t-1})$$
 
 
 ## 3. Method
