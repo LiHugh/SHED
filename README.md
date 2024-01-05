@@ -38,7 +38,8 @@ Specifically, our framework involves specifying the upper-level teacher policy, 
 
 ## 4. Experiment Domain
 ### 4.1 Evaluate the performance of the trajectory modelling
-<div align=center>  <img title="Lunar Lander" src="Figures/diffusion_1.PNG" width=25%>  <img title="Lunar Lander" src="Figures/diffusion_2.PNG" width=25%>  <img title="Lunar Lander" src="Figures/diffusion_3_1.PNG" width=25%>  <img title="Lunar Lander" src="Figures/diffusion_3_2.PNG" width=25%>    </div>
+<div align=center>  <img title="Lunar Lander" src="Figures/diffusion_1.PNG" width=25%>  <img title="Lunar Lander" src="Figures/diffusion_2.PNG" width=25%>  <img title="Lunar Lander" src="Figures/diffusion_3_1.PNG" width=25%>  <img title="Lunar Lander" src="Figures/diffusion_3_2.PNG" width=25%> </div>
+
 ### 4.2 Two domains
 we present our experimental results in the domains of BipedalWalker, Lunar Lander to demonstrate the superior performance of our approach when a trained agent is transferred to new environments.
 
