@@ -30,9 +30,11 @@ $$q(x_t|x_{t-1}) =  \mathcal{N} ( x_t ; \sqrt{1-\beta_t}x_{t-1} , \beta_t I) \qu
 
 
 ## 3. Method
-We propose the Marginal Benefit and Diversity driven Environment Design (MBeDED) approach to address UED problems. Our algorithm, MBeDED, relies on the teacher-student framework, which consists of an environment generator (teacher) and two student agents which help compute the marginal benefit of a generated environment. Top Figure provides the overall framework. The MBeDED algorithm incorporates two key components that differentiate it from existing research in solving UED problems
-* Marginal benefit-based environment generator
-* Diversity guided environment selection
+our objective is to generate a sequence of environments that effectively support the continual learning of the student agent. We adopt an RL-based approach for the environment generation process.
+
+At the core of SHED is the hierarchical MDP framework, consisting of an upper-level RL teacher policy and a lower-level student policy. 
+Specifically, our framework involves specifying the upper-level teacher policy, $\Lambda:\bm{\Pi} \rightarrow \Delta(\mathbb{\theta})$, where $\bm{\Pi}$ represents the set of possible student policies, and $\mathbb{\theta}$ signifies the range of potential environmental parameters.
+Diverging from RL teacher in the PAIRED algorithm, which takes inputs comprising the current fully observed state of the environment, the current time step $t$, and a random vector $z\sim \mathcal{N}(0,I)$, our method first approximates the student agent's policy by assessing its performance across a diverse set of environments. This input provides a more accurate reflection of the student's current capability level, enabling the teacher to consistently design environments that effectively support continuous training. We now elaborate on the specifics of our hierarchical framework. 
 
 
 ## 4. Experiment Domain
